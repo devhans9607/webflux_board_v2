@@ -2,6 +2,7 @@ package com.hans.rboard.web;
 
 import com.hans.dto.ErrCode;
 import com.hans.dto.ResObj;
+import com.hans.rboard.entity.User;
 import com.hans.rboard.repository.UserRepository;
 import com.hans.rboard.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +25,8 @@ public class UserController {
     }
 
     @PostMapping("/user")
-    public Mono<?> addUser() {
-        return null;
+    public Mono<?> addUser(User user) {
+        return userService.addUser(user);
     }
 
 //    @GetMapping("/success")

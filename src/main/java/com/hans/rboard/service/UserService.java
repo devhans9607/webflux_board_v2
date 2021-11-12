@@ -20,8 +20,9 @@ public class UserService {
         return userRepository.findAll().
                 collectList().flatMap(ResObj::success);
     }
-//
-//    public Mono<User> addUser() {
-//
-//    }
+
+    public Mono<?> addUser(User user) {
+
+        return Mono.just(userRepository::save).flatMap(ResObj::success);
+    }
 }
