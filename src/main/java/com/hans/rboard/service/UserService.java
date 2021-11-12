@@ -16,8 +16,4 @@ public class UserService {
     public Flux<User> findAll() {
         return userRepository.findAll();
     }
-
-    public Flux<?> findAll2() {
-        return userRepository.findAll();
-    }
 }

@@ -30,9 +30,4 @@ public class UserController {
     public Mono<?> fail() {
         return ResObj.failure(ErrCode.NO_DATA);
     }
-
-    @GetMapping("/users2")
-    public Flux<?> findAllUser2() {
-        return userService.findAll2();
-    }
 }

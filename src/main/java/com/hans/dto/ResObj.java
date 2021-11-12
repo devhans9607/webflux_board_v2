@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import reactor.core.publisher.Mono;
 
+// TODO: Is this way of custom response be disadvantaged for use of mono/flux?
+
 @Data
 public class ResObj<T> {
     int code;
