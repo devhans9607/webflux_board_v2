@@ -43,8 +43,8 @@ public class ResObj<T> {
         return Mono.just(new ResObj<>(ErrCode.SUCCESS));
     }
 
-    public static <T> Mono<ResObj<T>> success(Mono<T> monoData) {
-        return monoData.map(data -> new ResObj<>(ErrCode.SUCCESS, data));
+    public static <T> Mono<ResObj<T>> success(T monoData) {
+        return Mono.just(new ResObj<>(ErrCode.SUCCESS, monoData));
     }
 
     // TODO: Consider also accepting Flux?
@@ -57,7 +57,7 @@ public class ResObj<T> {
         return Mono.just(new ResObj<>(code, msg));
     }
 
-    public static <T> Mono<ResObj<T>> failure(ErrCode errCode, Mono<T> monoData) {
-        return monoData.map(data -> new ResObj<>(errCode, data));
+    public static <T> Mono<ResObj<T>> failure(ErrCode errCode, T monoData) {
+        return Mono.just(new ResObj<>(errCode, monoData));
     }
 }
