@@ -1,0 +1,16 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:9005/webflux #?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Seoul
+    username: pguser
+    password: hana123$
+    pool:
+      max-size: 100
+#      validation-query: SELECT 1
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          r2dbc: DEBUG
+server:
+  port: 9101
