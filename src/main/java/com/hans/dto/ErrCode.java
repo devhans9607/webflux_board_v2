@@ -12,6 +12,12 @@ public enum ErrCode {
     NO_SUBJECT(2001, "Subject is empty"),
     NO_DATA(2002, "No data"),
     UNZIP_ERROR(2003, "Invalid Zip"),
+
+    //login
+
+    WRONG_PASSCODE (2010, "Wrong password"),
+    NO_USER(2011, "UserID not found"),
+    EXISTING_USER(2012, "user Id already taken"),
     
     UNKNOWN_ERROR (9001, "Unknown Error"),
     END(9999, "ErrCode End");

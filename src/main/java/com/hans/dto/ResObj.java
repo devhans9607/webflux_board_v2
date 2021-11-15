@@ -12,15 +12,19 @@ public class ResObj<T> {
     String message;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    T data;
+    T content;
+
+    ResObj() {
+        setErrCode(ErrCode.SUCCESS);
+    }
 
     ResObj(ErrCode errCode) {
         setErrCode(errCode);
     }
 
-    ResObj(ErrCode errCode, T data) {
+    ResObj(ErrCode errCode, T content) {
         setErrCode(errCode);
-        this.data = data;
+        this.content = content;
     }
 
     ResObj(int code, String msg) {
@@ -39,6 +43,11 @@ public class ResObj<T> {
         this.message = errCode.getDesc();
     }
 
+    public void setErrCode(int code, String msg) {
+        this.code = code;
+        this.message = msg;
+    }
+
     public static <T> Mono<ResObj<T>> success() {
         return Mono.just(new ResObj<>(ErrCode.SUCCESS));
     }
@@ -55,6 +64,10 @@ public class ResObj<T> {
 
     public static <T> Mono<ResObj<T>> failure(int code, String msg) {
         return Mono.just(new ResObj<>(code, msg));
+    }
+
+    public static <T> Mono<ResObj<T>> failure() {
+        return Mono.just(new ResObj<>(ErrCode.UNKNOWN_ERROR));
     }
 
     public static <T> Mono<ResObj<T>> failure(ErrCode errCode, T monoData) {
