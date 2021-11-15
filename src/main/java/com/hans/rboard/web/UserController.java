@@ -8,41 +8,41 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/user")
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/users")
+    @PostMapping("/all")
     public Mono<?> findAllUser() {
         return userService.findAll();
     }
 
-    @PostMapping("/user/add")
+    @PostMapping("/add")
     public Mono<?> addUser(@RequestBody Mono<ReqAddUser> user) {
         return userService.addUser(user);
     }
 
-    @PostMapping("/user/get")
+    @PostMapping("/get")
     public Mono<?> findUser(@RequestBody Mono<ReqGetUser> req) {
         return userService.findByUid(req);
     }
 
-    @PostMapping("/user/remove")
+    @PostMapping("/remove")
     public Mono<?> removeUser(@RequestBody Mono<ReqRemoveUser> req) {
         return userService.removeByUid(req);
     }
 
-    @PostMapping("/user/edit")
+    @PostMapping("/edit")
     public Mono<?> editUser(@RequestBody Mono<ReqEditUser> req) {
         return userService.editUser(req);
     }
 
-    @PostMapping("/user/sign-in")
+    @PostMapping("/sign-in")
     public Mono<?> signIn(@RequestBody Mono<ReqSignIn> req) {
         return userService.signIn(req);
     }
 
-    @PostMapping("/user/sign-up")
+    @PostMapping("/sign-up")
     public Mono<?> signUp(@RequestBody Mono<ReqSignUp> req) {
         return userService.signUp(req);
     }

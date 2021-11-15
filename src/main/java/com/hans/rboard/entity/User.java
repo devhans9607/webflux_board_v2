@@ -1,9 +1,7 @@
 package com.hans.rboard.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.hans.rboard.dto.ReqEditUser;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
@@ -20,8 +18,9 @@ public class User {
 
     // When your database has an auto-increment column for the ID column, the generated value gets set in the entity after inserting it into the database.
     // https://docs.spring.io/spring-data/r2dbc/docs/current-SNAPSHOT/reference/html/#reference
+
     @Id
-    @Column("uid")
+    @Column(value = "uid")
     private Long uid;
 
     @Column("userid")
@@ -35,9 +34,4 @@ public class User {
 
     @Column("valid")
     private Boolean valid;
-
-//    @JsonIgnore
-//    public User(ReqSignInDto dto) {
-//
-//    }
 }
