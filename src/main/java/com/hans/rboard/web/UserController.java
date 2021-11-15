@@ -1,6 +1,6 @@
 package com.hans.rboard.web;
 
-import com.hans.rboard.dto.*;
+import com.hans.rboard.dto.user.*;
 import com.hans.rboard.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

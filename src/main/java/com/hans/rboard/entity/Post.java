@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
@@ -49,6 +50,13 @@ public class Post {
 
     @Column("is_deleted")
     private Boolean isDeleted;
+
+    // join user
+//    @Column("name")
+//    private String name;
+//
+//    @Column("userid")
+//    private String userId;
 
 //    @JsonIgnore
 //    private List<Comment> comments;

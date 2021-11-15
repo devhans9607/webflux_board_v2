@@ -2,7 +2,7 @@ package com.hans.rboard.service;
 
 import com.hans.dto.ErrCode;
 import com.hans.dto.ResObj;
-import com.hans.rboard.dto.*;
+import com.hans.rboard.dto.user.*;
 import com.hans.rboard.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

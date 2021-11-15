@@ -1,4 +1,4 @@
-package com.hans.rboard.dto;
+package com.hans.rboard.dto.user;
 
 import lombok.Data;
 import reactor.core.publisher.Mono;
