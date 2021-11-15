@@ -6,5 +6,5 @@ import lombok.Data;
 public class ReqGetPost {
     private Integer pageNum = 1;
     private Integer commentsPerPage = 5;
-    private Integer postId;
+    private Long postId;
 }

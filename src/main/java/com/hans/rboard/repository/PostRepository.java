@@ -20,5 +20,5 @@ public interface PostRepository extends R2dbcRepository<Post, Long> {
 
     // successfully joined user. But still no relation (ORM-less).
     @Query("select posts.*, users.* from posts inner join users on users.uid = posts.uid where posts.post_id = :postId")
-    Mono<Post> findByIdTest(@Param(value = "postId") Long postId);
+    Mono<Post> findByIdWithName(@Param(value = "postId") Long postId);
 }

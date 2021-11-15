@@ -28,14 +28,21 @@ public class BoardService {
 
     public Mono<?> getPostSimple(Mono<ReqGetSimplePost> req) {
 //        return req.flatMap(r -> postRepository.findById(r.getPostId())).flatMap(ResObj::success).switchIfEmpty(ResObj.failure(ErrCode.NO_POST));
-        return req.flatMap(r -> postRepository.findByIdTest(r.getPostId())).flatMap(ResObj::success).switchIfEmpty(ResObj.failure(ErrCode.NO_POST));
+        return req.flatMap(r -> postRepository.findByIdWithName(r.getPostId()))
+                .flatMap(ResObj::success)
+                .switchIfEmpty(ResObj.failure(ErrCode.NO_POST));
     }
 
+    // create pageable
+    // get post by postId (with name)
+    // get comments by postId (with name / pagination)
+    // map to res dto
     public Mono<?> getPost(Mono<ReqGetPost> req) {
-//        req.map(r -> {
-//            Pageable pageable = PageRequest.of(r.getPageNum()-1, r.getCommentsPerPage(), Sort.Direction.ASC, "commentId");
-//        })
-        return null;
+        return req.map(r -> {
+            Pageable pageable = PageRequest.of(r.getPageNum()-1, r.getCommentsPerPage(), Sort.Direction.ASC, "comment_id");
+
+            return null;
+        });
     }
 
     public Mono<?> newPost(Mono<ReqNewPost> req) {

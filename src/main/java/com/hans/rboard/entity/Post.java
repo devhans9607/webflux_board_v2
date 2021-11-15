@@ -52,8 +52,8 @@ public class Post {
     private Boolean isDeleted;
 
     // join user
-//    @Column("name")
-//    private String name;
+    @Column("name")
+    private String userName;
 //
 //    @Column("userid")
 //    private String userId;

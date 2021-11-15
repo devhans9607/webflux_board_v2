@@ -30,7 +30,7 @@ public class User {
     private String userPwd;
 
     @Column("name")
-    private String name; //name 수저ㅏ
+    private String userName; //name 수저ㅏ
 
     @Column("valid")
     private Boolean valid;

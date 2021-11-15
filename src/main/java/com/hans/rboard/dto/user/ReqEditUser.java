@@ -14,7 +14,7 @@ public class ReqEditUser {
     public static User mapper(ReqEditUser req) {
         return User.builder()
                 .uid(req.getUid())
-                .name(req.getName())
+                .userName(req.getName())
                 .userId(req.getUserId())
                 .userPwd(req.getUserPwd())
                 .valid(req.getValid())

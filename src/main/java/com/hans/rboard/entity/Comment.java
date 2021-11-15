@@ -48,4 +48,7 @@ public class Comment {
 
     @Column("is_deleted")
     private Boolean isDeleted;
+
+    @Column("name")
+    private String userName;
 }

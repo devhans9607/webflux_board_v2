@@ -11,7 +11,7 @@ public class ReqSignUp {
 
     public static User mapper(ReqSignUp req) {
         return User.builder()
-                .name(req.getName())
+                .userName(req.getName())
                 .userId(req.getUserId())
                 .userPwd(req.getUserPwd())
                 .valid(true)

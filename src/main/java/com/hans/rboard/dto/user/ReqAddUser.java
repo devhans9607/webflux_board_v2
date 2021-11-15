@@ -12,7 +12,7 @@ public class ReqAddUser {
 
     public static User mapper(ReqAddUser req) {
         return User.builder()
-                .name(req.getName())
+                .userName(req.getName())
                 .userId(req.getUserId())
                 .userPwd(req.getUserPwd())
                 .valid(req.getValid())
