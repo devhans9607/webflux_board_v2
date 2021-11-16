@@ -18,6 +18,7 @@ public enum ErrCode {
     WRONG_PASSCODE (2010, "Wrong password"),
     NO_USER(2011, "UserID not found"),
     EXISTING_USER(2012, "user Id already taken"),
+    ALREADY_DISABLED(2013, "user is already disabled"),
 
     //post
 

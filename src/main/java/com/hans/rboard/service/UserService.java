@@ -76,4 +76,10 @@ public class UserService {
                                                         : ResObj.failure(ErrCode.EXISTING_USER))
                                                 .switchIfEmpty(ResObj.failure(ErrCode.UNKNOWN_ERROR)));
     }
+
+    public Mono<?> disableUser(Mono<ReqRemoveUser> req) {
+        return req.flatMap(r -> userRepository.setIsNotValid(r.getUid()))
+                .flatMap(v -> (v == 0) ? ResObj.failure(ErrCode.ALREADY_DISABLED) : ResObj.success())
+                .switchIfEmpty(ResObj.failure(ErrCode.NO_USER));
+    }
 }

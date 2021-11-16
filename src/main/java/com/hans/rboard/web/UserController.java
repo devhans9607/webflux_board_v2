@@ -47,13 +47,8 @@ public class UserController {
         return userService.signUp(req);
     }
 
-//    @GetMapping("/success")
-//    public Mono<?> success() {
-//        return ResObj.success();
-//    }
-//
-//    @GetMapping("/fail")
-//    public Mono<?> fail() {
-//        return ResObj.failure(ErrCode.NO_DATA);
-//    }
+    @PostMapping("/disable")
+    public Mono<?> disableUser(@RequestBody Mono<ReqRemoveUser> req) {
+        return userService.disableUser(req);
+    }
 }

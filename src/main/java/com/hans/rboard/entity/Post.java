@@ -1,12 +1,10 @@
 package com.hans.rboard.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
@@ -15,13 +13,13 @@ import javax.xml.stream.events.Comment;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table("posts")
+@Data
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Builder
-@AllArgsConstructor
 public class Post {
     @Id
     @Column("post_id")

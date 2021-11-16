@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 // TODO
 //  - Error handler
 //  - Passcode Encoder
+//  - valid / nonnull
 //  - JWT Token
 //  - Security?
 

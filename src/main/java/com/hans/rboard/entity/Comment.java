@@ -17,6 +17,8 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Comment {
 
     @Id
@@ -33,9 +35,7 @@ public class Comment {
     @Column("uid")
     private Long uid;
 
-
     @Column("created_at")
-    //@Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
     private LocalDateTime createdAt;
 

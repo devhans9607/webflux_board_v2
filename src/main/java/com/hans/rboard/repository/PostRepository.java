@@ -24,6 +24,6 @@ public interface PostRepository extends R2dbcRepository<Post, Long> {
     @Query("select posts.*, users.name from posts inner join users on users.uid = posts.uid where posts.post_id = :postId and posts.is_deleted = false")
     Mono<PostWithName> findByIdWithName(@Param(value = "postId") Long postId);
 
-    @Query("select posts.*, users.name from posts join users on users.uid = posts.uid where posts.title like :keyword and posts.is_deleted = false order by posts.post_id limit :limit offset :offset")
+    @Query("select posts.*, users.name from posts inner join users on users.uid = posts.uid where posts.title like :keyword and posts.is_deleted = false order by posts.post_id limit :limit offset :offset")
     Flux<PostWithName> findByTitleContainingWithName(@Param(value = "limit") int limit, @Param(value = "offset") int offset, @Param(value = "keyword") String keyword);
 }
