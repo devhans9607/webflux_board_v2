@@ -50,10 +50,6 @@ public class Post {
 
     @Column("is_deleted")
     private Boolean isDeleted;
-
-    // join user
-    @Column("name")
-    private String userName;
 //
 //    @Column("userid")
 //    private String userId;

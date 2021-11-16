@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 @Table("comments")
 //@Where(clause = "is_deleted=false")
-@Getter
+@Data
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -48,7 +48,4 @@ public class Comment {
 
     @Column("is_deleted")
     private Boolean isDeleted;
-
-    @Column("name")
-    private String userName;
 }

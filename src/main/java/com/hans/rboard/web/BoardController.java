@@ -41,23 +41,23 @@ public class BoardController {
     }
 
     @PostMapping("/post/paged")
-    public Mono<?> pagedPosts() {
-        return boardService.pagedPosts();
+    public Mono<?> pagedPosts(@RequestBody Mono<ReqGetPagedPosts> req) {
+        return boardService.pagedPosts(req);
     }
 
     @PostMapping("/comment/new")
-    public Mono<?> newComment() {
-        return boardService.newComment();
+    public Mono<?> newComment(@RequestBody Mono<ReqNewComment> req) {
+        return boardService.newComment(req);
     }
 
     @PostMapping("/comment/edit")
-    public Mono<?> editComment() {
-        return boardService.editComment();
+    public Mono<?> editComment(@RequestBody Mono<ReqEditComment> req) {
+        return boardService.editComment(req);
     }
 
     @PostMapping("/comment/remove")
-    public Mono<?> deleteComment() {
-        return boardService.deleteComment();
+    public Mono<?> deleteComment(@RequestBody Mono<ReqDeleteComment> req) {
+        return boardService.deleteComment(req);
     }
     
 }

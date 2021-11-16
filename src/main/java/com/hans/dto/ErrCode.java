@@ -23,6 +23,7 @@ public enum ErrCode {
 
     NO_POST(2020, "no post found by postId"),
     UID_MISMATCH(2021, "Uid different from original post."),
+    NO_COMMENT(2022, "no comment found by commentId"),
 
     UNKNOWN_ERROR (9001, "Unknown Error"),
     END(9999, "ErrCode End");
