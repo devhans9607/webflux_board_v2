@@ -13,6 +13,7 @@ public class ReqNewComment {
         return Comment.builder()
                 .postId(req.getPostId())
                 .contents(req.getContents())
+                .isDeleted(false)
                 .uid(req.getUid())
                 .build();
     }
