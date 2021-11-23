@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/user")
+@RequestMapping("/api/v1/board2/user")
 public class UserController {
     private final UserService userService;
 
