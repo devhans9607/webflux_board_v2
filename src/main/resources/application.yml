@@ -15,6 +15,6 @@ logging:
         data:
           r2dbc: DEBUG
 server:
-  port: 9102
+  port: 0
 
 #springdoc.api-docs.path : /board2
