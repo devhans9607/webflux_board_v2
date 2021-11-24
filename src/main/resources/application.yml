@@ -1,6 +1,8 @@
 spring:
   application:
     name: board2
+  profiles:
+    active: local
   r2dbc:
     url: r2dbc:postgresql://localhost:9005/webflux #?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Seoul
     username: pguser
@@ -16,5 +18,25 @@ logging:
           r2dbc: DEBUG
 server:
   port: 0
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+eureka:
+  client:
+    enabled: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: k8s
+
+eureka:
+  client:
+    enabled: false
 
 #springdoc.api-docs.path : /board2
